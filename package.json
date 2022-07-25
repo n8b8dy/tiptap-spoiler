@@ -1,5 +1,5 @@
 {
-  "name": "tiptap-spoiler",
+  "name": "@n8body/tiptap-spoiler",
   "version": "0.1.0",
   "description": "TipTap React extension for spoilers",
   "main": "index.ts",
@@ -28,5 +28,6 @@
   "peerDependencies": {
     "@tiptap/core": "^2.0.0-beta.1",
     "@tiptap/react": "^2.0.0-beta.114"
-  }  
+  },
+  "devDependencies": {}
 }
