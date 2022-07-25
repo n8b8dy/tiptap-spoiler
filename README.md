@@ -1,6 +1,12 @@
 # tiptap-spoiler
 Just a simple React extension (actually two extensions) for [TipTap](https://github.com/ueberdosis/tiptap) to add spoilers to the editor.
 
+### Installing
+Via [npm](https://www.npmjs.com/package/@n8body/tiptap-spoiler):
+```
+npm i @n8body/tiptap-spoiler
+```
+
 ### What's in there
 The extensions are - ```SpoilerEditor``` and ```SpoilerOutput```. The names are pretty self-descriptive...
 
@@ -8,7 +14,7 @@ You can provide the following options to them:
 | ```SpoilerEditor``` Options | Type | Optional | Description |
 | ------ | ------ | ----- | ----- |
 | spoilerClass | ```string``` | No | Class name for the spoiler in the editor |
-| inputRegex | ```RegExp``` | Yes | Input regular expression, the default one matches ```|| text ||``` |
+| inputRegex | ```RegExp``` | Yes | Input regular expression, the default one matches ```\|\| text \|\|``` |
 | pasteRegex | ```RegExp``` | Yes | Same as the previous one, but for pasting|
 
 and
