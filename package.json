@@ -1,19 +1,21 @@
 {
   "name": "@n8body/tiptap-spoiler",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "TipTap React extension for spoilers",
-  "main": "./src/index.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {},
+  "prepublish": "tsc",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/n8b8dy/tiptap-spoiler.git"
   },
   "keywords": [
     "tiptap",
-    "node",
     "extension",
+    "tiptap extension",
+    "node",
+    "tiptap node",
     "spoiler"
   ],
   "author": "n8body",
