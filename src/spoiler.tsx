@@ -23,6 +23,7 @@ export type SpoilerEditorOptions = {
   spoilerClass: string | null
   inputRegex: RegExp
   pasteRegex: RegExp
+  inline: boolean
 }
 
 export type SpoilerOutputOptions = {
@@ -31,6 +32,8 @@ export type SpoilerOutputOptions = {
   spoilerOpenClass: string | null
   spoilerCloseClass: string | null
   as: ElementType
+  inline: boolean
+  content: string
 }
 
 const spoilerInputRegex = /(?:^|\s)((?:\|\|)((?:[^||]+))(?:\|\|))$/
@@ -39,16 +42,21 @@ const spoilerPasteRegex = /(?:^|\s)((?:\|\|)((?:[^||]+))(?:\|\|))/g
 export const SpoilerEditor = Mark.create<SpoilerEditorOptions>({
   name: 'spoilerEditor',
 
-  group: 'inline',
-  inline: true,
-
   addOptions () {
     return {
       HTMLAttributes: {},
       spoilerClass: null,
       inputRegex: spoilerInputRegex,
       pasteRegex: spoilerPasteRegex,
+      inline: true,
     }
+  },
+
+  inline() {
+    return this.options.inline
+  },
+  group() {
+    return this.options.inline ? 'inline' : 'block'
   },
 
   parseHTML () {
@@ -117,10 +125,6 @@ const SpoilerOutputComponent = (props: NodeViewContentProps) => {
 export const SpoilerOutput = Node.create<SpoilerOutputOptions>({
   name: 'spoilerOutput',
 
-  group: 'inline',
-  inline: true,
-  content: 'inline*',
-
   addOptions() {
     return {
       HTMLAttributes: {},
@@ -128,7 +132,19 @@ export const SpoilerOutput = Node.create<SpoilerOutputOptions>({
       spoilerOpenClass: null,
       spoilerCloseClass: null,
       as: 'span',
+      inline: true,
+      content: 'inline*',
     }
+  },
+
+  inline() {
+    return this.options.inline
+  },
+  group() {
+    return this.options.inline ? 'inline' : 'block'
+  },
+  content() {
+    return this.options.content
   },
 
   parseHTML() {
