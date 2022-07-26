@@ -1,8 +1,8 @@
 {
   "name": "@n8body/tiptap-spoiler",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "TipTap React extension for spoilers",
-  "main": "index.ts",
+  "main": "./src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
