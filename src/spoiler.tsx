@@ -39,10 +39,8 @@ const spoilerPasteRegex = /(?:^|\s)((?:\|\|)((?:[^||]+))(?:\|\|))/g
 export const SpoilerEditor = Mark.create<SpoilerEditorOptions>({
   name: 'spoilerEditor',
 
-  type: 'mark',
   group: 'inline',
   inline: true,
-  content: 'inline*',
 
   addOptions () {
     return {
@@ -104,9 +102,9 @@ const SpoilerOutputComponent = (props: NodeViewContentProps) => {
   const options = props.extension.options
 
   return (
-    <NodeViewWrapper>
+    <NodeViewWrapper as={options.as}>
         <NodeViewContent
-          as={options.span}
+          as={options.as}
           className={
             `${options.spoilerClass} ${open ? options.spoilerOpenClass : options.spoilerCloseClass}`
           }
