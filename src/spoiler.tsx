@@ -24,6 +24,7 @@ export type SpoilerEditorOptions = {
   inputRegex: RegExp
   pasteRegex: RegExp
   inline: boolean
+  inclusive: boolean
 }
 
 export type SpoilerOutputOptions = {
@@ -49,6 +50,7 @@ export const SpoilerEditor = Mark.create<SpoilerEditorOptions>({
       inputRegex: spoilerInputRegex,
       pasteRegex: spoilerPasteRegex,
       inline: true,
+      inclusive: false,
     }
   },
 
@@ -57,6 +59,9 @@ export const SpoilerEditor = Mark.create<SpoilerEditorOptions>({
   },
   group() {
     return this.options.inline ? 'inline' : 'block'
+  },
+  inclusive() {
+    return this.options.inclusive
   },
 
   parseHTML () {
@@ -134,7 +139,6 @@ export const SpoilerOutput = Node.create<SpoilerOutputOptions>({
       as: 'span',
       inline: true,
       content: 'inline*',
-      inclusive: false,
     }
   },
 
@@ -146,9 +150,6 @@ export const SpoilerOutput = Node.create<SpoilerOutputOptions>({
   },
   content() {
     return this.options.content
-  },
-  inclusive() {
-    return this.options.inclusive
   },
 
   parseHTML() {

@@ -1,6 +1,6 @@
 {
   "name": "@n8body/tiptap-spoiler",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "TipTap React extension for spoilers",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
