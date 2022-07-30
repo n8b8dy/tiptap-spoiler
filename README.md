@@ -15,8 +15,9 @@ You can provide the following options to them:
 | ------ | ------ | ----- | ----- |
 | spoilerClass | ```string``` | No | Class name for the spoiler in the editor |
 | inputRegex | ```RegExp``` | Yes | Input regular expression, the default one matches ```\|\| text \|\|``` |
-| pasteRegex | ```RegExp``` | Yes | Same as the previous one, but for pasting|
-| inline | ```boolean``` | Yes | Sets extension's ```inline``` and ```group``` properties |
+| pasteRegex | ```RegExp``` | Yes | Same as the previous one, but for pasting |
+| inline | ```boolean``` | Yes | Sets extension's ```inline``` and ```group``` properties. Default: ```true``` |
+| inclusive | ```boolean``` | Yes | Sets extension's ```inclusive``` property. Default: ```false``` |
 
 and
 
@@ -26,8 +27,8 @@ and
 | spoilerOpenClass | ```string``` | No | Open spoiler class | 
 | spoilerCloseClass | ```string``` | No | Closed spoiler class  |
 | as | ```ElementType``` | Yes | Tag to be rendered. Default: 'span' |
-| inline | ```boolean``` | Yes | Sets extension's ```inline``` and ```group``` properties |
-| content | ```string``` | Yes | Set's extension's ```content``` property |
+| inline | ```boolean``` | Yes | Sets extension's ```inline``` and ```group``` properties. Default: ```true``` |
+| content | ```string``` | Yes | Sets extension's ```content``` property. Default: ```'inline*'``` |
 
 To be said: you can omit some of the classes, depending on your CSS - just be sure, that it works properly.
 
@@ -42,6 +43,7 @@ const editor = useEditor({
       spoilerClass: 'beautiful-spoiler',
       inputRegex: /(?:^|\s)((?:\[spoiler\])((?:[^||]+))(?:\[\/spoiler\]))$/, // to match [spoiler]text[/spoiler]
       pasteRegex: /(?:^|\s)((?:\[spoiler\])((?:[^||]+))(?:\[\/spoiler\]))/g, // same here
+      inclusive: true,
     })
   ],
   content: '',
@@ -57,6 +59,7 @@ const editor = useEditor({
       spoilerOpenClass: 'open-spoiler',
       spoilerCloseClass: 'closed-spoiler',
       as: 'code',
+      inline: false,
     })
   ],
   content: '<p>The best website for manga is <spoiler>manga.ovh</spoiler></p>',

@@ -134,6 +134,7 @@ export const SpoilerOutput = Node.create<SpoilerOutputOptions>({
       as: 'span',
       inline: true,
       content: 'inline*',
+      inclusive: false,
     }
   },
 
@@ -145,6 +146,9 @@ export const SpoilerOutput = Node.create<SpoilerOutputOptions>({
   },
   content() {
     return this.options.content
+  },
+  inclusive() {
+    return this.options.inclusive
   },
 
   parseHTML() {
