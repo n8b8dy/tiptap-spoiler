@@ -26,7 +26,7 @@ and
 | spoilerClass | ```string``` | No | Main spoiler class  | 
 | spoilerOpenClass | ```string``` | No | Open spoiler class | 
 | spoilerCloseClass | ```string``` | No | Closed spoiler class  |
-| as | ```ElementType``` | Yes | Tag to be rendered. Default: 'span' |
+| as | ```ElementType``` | Yes | Tag to be rendered. Default: ```'span'``` |
 | inline | ```boolean``` | Yes | Sets extension's ```inline``` and ```group``` properties. Default: ```true``` |
 | content | ```string``` | Yes | Sets extension's ```content``` property. Default: ```'inline*'``` |
 
